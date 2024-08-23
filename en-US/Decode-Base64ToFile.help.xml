@@ -1,0 +1,35 @@
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+                 xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+                 xmlns:dev="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+        <command:name>Decode-Base64ToFile</command:name>
+        <maml:description>
+            <maml:para>Decodes a Base64 encoded string and writes it to a file.</maml:para>
+        </maml:description>
+        <command:verb>Decode</command:verb>
+        <command:noun>Base64ToFile</command:noun>
+        <command:version>1.0.0</command:version>
+    </command:details>
+    <command:syntax>
+        <command:syntaxItem>
+            <maml:name>Decode-Base64ToFile</maml:name>
+            <command:parameter required="true" position="0" globbing="false">
+                <maml:name>Base64String</maml:name>
+                <maml:description>
+                    <maml:para>The Base64 encoded string to decode.</maml:para>
+                </maml:description>
+                <command:parameterValue required="true" variableLength="false" type="System.String" />
+            </command:parameter>
+            <command:parameter required="true" position="1" globbing="false">
+                <maml:name>OutputFilePath</maml:name>
+                <maml:description>
+                    <maml:para>The path where the decoded file will be saved.</maml:para>
+                </maml:description>
+                <command:parameterValue required="true" variableLength="false" type="System.String" />
+            </command:parameter>
+        </command:syntaxItem>
+    </command:syntax>
+    <command:description>
+        <maml:para>This cmdlet decodes a Base64 string and writes the decoded data to a specified file.</maml:para>
+    </command:description>
+   
