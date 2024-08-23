@@ -25,7 +25,6 @@ function Decode-Base64ToString {
         [System.Text.Encoding]::UTF8.GetString($Bytes)
     }
 }
-
 function Encode-FileToBase64 {
     [CmdletBinding()]
     param (
@@ -38,31 +37,56 @@ function Encode-FileToBase64 {
             Write-Error "File not found: $FilePath"
             return
         }
+
         $Bytes = [System.IO.File]::ReadAllBytes($FilePath)
-        [Convert]::ToBase64String($Bytes)
+        $Base64String = [Convert]::ToBase64String($Bytes)
+        
+        # Create new file path with -64SE before the file extension
+        $NewFilePath = [System.IO.Path]::ChangeExtension($FilePath, "64SE" + [System.IO.Path]::GetExtension($FilePath))
+        
+        # Write the Base64 string to the new file
+        [System.IO.File]::WriteAllText($NewFilePath, $Base64String)
+
+        Write-Output "Encoded file created at $NewFilePath"
     }
 }
 
 function Decode-Base64ToFile {
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory = $true, Position = 0)]
+        [Parameter(Position = 0)]
         [string]$Base64String,
 
         [Parameter(Mandatory = $true, Position = 1)]
-        [string]$OutputFilePath
+        [string]$FilePath
     )
 
     process {
+        if (-not $Base64String) {
+            # Read the content from the file if Base64String is not provided
+            $Base64String = Get-Content -Path $FilePath -Raw
+        }
+
         try {
             $Bytes = [Convert]::FromBase64String($Base64String)
-            [System.IO.File]::WriteAllBytes($OutputFilePath, $Bytes)
-            Write-Output "File successfully created at $OutputFilePath"
+            
+            # Determine the new file path
+            if ($FilePath -like "*.64SE.*") {
+                $NewFilePath = $FilePath -replace '\.64SE\.', '.decoded.'
+            } else {
+                $NewFilePath = [System.IO.Path]::ChangeExtension($FilePath, ".decoded" + [System.IO.Path]::GetExtension($FilePath))
+            }
+            
+            [System.IO.File]::WriteAllBytes($NewFilePath, $Bytes)
+            Write-Output "Decoded file created at $NewFilePath"
         } catch {
             Write-Error "Failed to decode Base64 string: $_"
         }
     }
 }
+
+
+
 
 # Exporting functions
 Export-ModuleMember -Function Encode-StringToBase64, Decode-Base64ToString, Encode-FileToBase64, Decode-Base64ToFile

@@ -62,7 +62,7 @@
     ModuleList = @()
 
     # List of all files packaged with this module
-    FileList = @('64SE.psm1')
+    FileList = @('64SE.psm1', 'en-US/about_64SE.help.txt', 'en-US/Encode-StringToBase64.help.xml', 'en-US/Decode-Base64ToString.help.xml', 'en-US/Encode-FileToBase64.help.xml', 'en-US/Decode-Base64ToFile.help.xml', 'README.md')
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess
     PrivateData = @{
@@ -77,33 +77,6 @@
         ReleaseNotes = 'Initial release of the 64SE module.'
     }
 
-    # Additional module metadata to define where this module can be found
-    RepositorySourceLocation = 'https://www.powershellgallery.com/packages/64SE'
-
-    # Functions to define in the module manifest that may not be exported
-    DscResourcesToExport = @()
-
-    # DSC resources to export from this module
-    DscResourcesToExport = @()
-
-    # List of all files packaged with this module
-    FileList = @()
-
-    # Assemblies to load with this module
-    RequiredAssemblies = @()
-
-    # Aliases to export
-    AliasesToExport = @()
-
     # HelpInfo URI of this module
     HelpInfoUri = 'https://github.com/kalichuza/64SE'
-
-    # Script files (.ps1) that are run in the caller's environment prior to importing this module
-    ScriptsToProcess = @()
-
-    # Whether the modules defined in NestedModules are meant to be processed in the caller's environment
-    NestedModules = @()
-
-    # Whether this is a multi-threaded module
-    CmdletsToExport = @()
 }
