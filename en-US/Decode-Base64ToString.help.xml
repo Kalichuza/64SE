@@ -1,0 +1,31 @@
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+                 xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+                 xmlns:dev="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+        <command:name>Decode-Base64ToString</command:name>
+        <maml:description>
+            <maml:para>Decodes a Base64 encoded string back to its original text.</maml:para>
+        </maml:description>
+        <command:verb>Decode</command:verb>
+        <command:noun>Base64ToString</command:noun>
+        <command:version>1.0.0</command:version>
+    </command:details>
+    <command:syntax>
+        <command:syntaxItem>
+            <maml:name>Decode-Base64ToString</maml:name>
+            <command:parameter required="true" position="0" globbing="false">
+                <maml:name>Base64String</maml:name>
+                <maml:description>
+                    <maml:para>The Base64 encoded string to decode.</maml:para>
+                </maml:description>
+                <command:parameterValue required="true" variableLength="false" type="System.String" />
+            </command:parameter>
+        </command:syntaxItem>
+    </command:syntax>
+    <command:description>
+        <maml:para>This cmdlet decodes a Base64 encoded string back to its original text.</maml:para>
+    </command:description>
+    <command:examples>
+        <command:example>
+            <maml:para>EXAMPLE 1</maml:para>
+            <maml:
