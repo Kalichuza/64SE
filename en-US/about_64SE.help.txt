@@ -1,0 +1,27 @@
+TOPIC
+    about_64SE
+
+SHORT DESCRIPTION
+    64SE is a PowerShell module for encoding and decoding strings and files using Base64.
+
+LONG DESCRIPTION
+    The 64SE module provides a set of cmdlets that simplify the process of encoding strings and files to Base64 and decoding Base64 strings back to their original format.
+    It supports the encoding and decoding of both strings and files, providing flexibility in handling different types of data.
+
+    The module contains the following cmdlets:
+    - Encode-StringToBase64
+    - Decode-Base64ToString
+    - Encode-FileToBase64
+    - Decode-Base64ToFile
+
+EXAMPLES
+    For examples of how to use these cmdlets, see the detailed help for each cmdlet using `Get-Help <cmdlet-name> -Examples`.
+
+SEE ALSO
+    - Encode-StringToBase64
+    - Decode-Base64ToString
+    - Encode-FileToBase64
+    - Decode-Base64ToFile
+
+KEYWORDS
+    Base64, Encoding, Decoding, PowerShell, File, String
