@@ -1,0 +1,38 @@
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+                 xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+                 xmlns:dev="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+        <command:name>Encode-StringToBase64</command:name>
+        <maml:description>
+            <maml:para>Encodes a given string to Base64 format.</maml:para>
+        </maml:description>
+        <command:verb>Encode</command:verb>
+        <command:noun>StringToBase64</command:noun>
+        <command:version>1.0.0</command:version>
+    </command:details>
+    <command:syntax>
+        <command:syntaxItem>
+            <maml:name>Encode-StringToBase64</maml:name>
+            <command:parameter required="true" position="0" globbing="false">
+                <maml:name>InputString</maml:name>
+                <maml:description>
+                    <maml:para>The string to encode to Base64.</maml:para>
+                </maml:description>
+                <command:parameterValue required="true" variableLength="false" type="System.String" />
+            </command:parameter>
+        </command:syntaxItem>
+    </command:syntax>
+    <command:description>
+        <maml:para>This cmdlet encodes a provided string into Base64 format.</maml:para>
+    </command:description>
+    <command:examples>
+        <command:example>
+            <maml:para>EXAMPLE 1</maml:para>
+            <maml:code>Encode-StringToBase64 -InputString "Hello, World!"</maml:code>
+            <maml:remarks>
+                <maml:para>Encodes the string "Hello, World!" to Base64.</maml:para>
+            </maml:remarks>
+        </command:example>
+    </command:examples>
+    <command:relatedLinks />
+</command:command>
