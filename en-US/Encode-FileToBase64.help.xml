@@ -4,7 +4,7 @@
     <command:details>
         <command:name>Encode-FileToBase64</command:name>
         <maml:description>
-            <maml:para>Encodes the contents of a file to a Base64 string.</maml:para>
+            <maml:para>Encodes the contents of a specified file into a Base64 string and saves the output to a new file with '.64SE' appended to the original filename.</maml:para>
         </maml:description>
         <command:verb>Encode</command:verb>
         <command:noun>FileToBase64</command:noun>
@@ -23,14 +23,14 @@
         </command:syntaxItem>
     </command:syntax>
     <command:description>
-        <maml:para>This cmdlet encodes the contents of a specified file into a Base64 string.</maml:para>
+        <maml:para>This cmdlet encodes the contents of a specified file into a Base64 string and saves the output to a new file with '.64SE' appended to the original filename.</maml:para>
     </command:description>
     <command:examples>
         <command:example>
             <maml:para>EXAMPLE 1</maml:para>
             <maml:code>Encode-FileToBase64 -FilePath "C:\path\to\file.txt"</maml:code>
             <maml:remarks>
-                <maml:para>Encodes the contents of the file at "C:\path\to\file.txt" to Base64.</maml:para>
+                <maml:para>Encodes the contents of the file at "C:\path\to\file.txt" to Base64 and saves it as "C:\path\to\file.txt.64SE".</maml:para>
             </maml:remarks>
         </command:example>
     </command:examples>

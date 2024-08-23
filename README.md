@@ -8,8 +8,8 @@
 
 - **Encode-StringToBase64**: Converts a plain text string to its Base64 encoded equivalent.
 - **Decode-Base64ToString**: Converts a Base64 encoded string back to plain text.
-- **Encode-FileToBase64**: Encodes the contents of a file into a Base64 string.
-- **Decode-Base64ToFile**: Decodes a Base64 string and writes the decoded data to a file.
+- **Encode-FileToBase64**: Encodes the contents of a file into a Base64 string and saves it to a new file with `.64SE` appended to the original filename.
+- **Decode-Base64ToFile**: Decodes a Base64 string and writes the decoded data to a file. If the filename contains `.64SE.`, it will be replaced with `.decoded.`; otherwise, `.decoded` will be added before the file extension.
 
 ## Installation
 

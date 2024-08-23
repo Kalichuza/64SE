@@ -41,7 +41,7 @@ function Encode-FileToBase64 {
         $Bytes = [System.IO.File]::ReadAllBytes($FilePath)
         $Base64String = [Convert]::ToBase64String($Bytes)
         
-        # Create new file path with -64SE before the file extension
+        # Create new file path with 64SE before the file extension
         $NewFilePath = [System.IO.Path]::ChangeExtension($FilePath, "64SE" + [System.IO.Path]::GetExtension($FilePath))
         
         # Write the Base64 string to the new file

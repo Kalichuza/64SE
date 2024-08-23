@@ -2,30 +2,51 @@
                  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
                  xmlns:dev="http://schemas.microsoft.com/maml/dev/command/2004/10">
     <command:details>
-        <command:name>Decode-Base64ToString</command:name>
+        <command:name>Decode-Base64ToFile</command:name>
         <maml:description>
-            <maml:para>Decodes a Base64 encoded string back to its original text.</maml:para>
+            <maml:para>Decodes a Base64 string and writes the decoded data to a file. If the file path contains '.64SE.', it will replace it with '.decoded.'; otherwise, it will add '.decoded' before the file extension.</maml:para>
         </maml:description>
         <command:verb>Decode</command:verb>
-        <command:noun>Base64ToString</command:noun>
+        <command:noun>Base64ToFile</command:noun>
         <command:version>1.0.0</command:version>
     </command:details>
     <command:syntax>
         <command:syntaxItem>
-            <maml:name>Decode-Base64ToString</maml:name>
-            <command:parameter required="true" position="0" globbing="false">
+            <maml:name>Decode-Base64ToFile</maml:name>
+            <command:parameter required="false" position="0" globbing="false">
                 <maml:name>Base64String</maml:name>
                 <maml:description>
-                    <maml:para>The Base64 encoded string to decode.</maml:para>
+                    <maml:para>The Base64 encoded string to decode. If not provided, the content will be read from the specified file path.</maml:para>
+                </maml:description>
+                <command:parameterValue required="false" variableLength="false" type="System.String" />
+            </command:parameter>
+            <command:parameter required="true" position="1" globbing="false">
+                <maml:name>FilePath</maml:name>
+                <maml:description>
+                    <maml:para>The path where the Base64 string is stored or where the decoded file will be saved.</maml:para>
                 </maml:description>
                 <command:parameterValue required="true" variableLength="false" type="System.String" />
             </command:parameter>
         </command:syntaxItem>
     </command:syntax>
     <command:description>
-        <maml:para>This cmdlet decodes a Base64 encoded string back to its original text.</maml:para>
+        <maml:para>This cmdlet decodes a Base64 string and writes the decoded data to a file. If the file path contains '.64SE.', it will replace it with '.decoded.'; otherwise, it will add '.decoded' before the file extension.</maml:para>
     </command:description>
     <command:examples>
         <command:example>
             <maml:para>EXAMPLE 1</maml:para>
-            <maml:
+            <maml:code>Decode-Base64ToFile -FilePath "C:\path\to\file.txt.64SE"</maml:code>
+            <maml:remarks>
+                <maml:para>Decodes the content from "C:\path\to\file.txt.64SE" and saves it as "C:\path\to\file.txt.decoded".</maml:para>
+            </maml:remarks>
+        </command:example>
+        <command:example>
+            <maml:para>EXAMPLE 2</maml:para>
+            <maml:code>Decode-Base64ToFile -FilePath "C:\path\to\file.txt"</maml:code>
+            <maml:remarks>
+                <maml:para>Reads the Base64 string from "C:\path\to\file.txt", decodes it, and saves it as "C:\path\to\file.decoded.txt".</maml:para>
+            </maml:remarks>
+        </command:example>
+    </command:examples>
+    <command:relatedLinks />
+</command:command>
